@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: org.yogesh.electoral.bonds.electoralbondsapplication.ElectoralBondsApplicationTests
--------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 29.44 s -- in org.yogesh.electoral.bonds.electoralbondsapplication.ElectoralBondsApplicationTests

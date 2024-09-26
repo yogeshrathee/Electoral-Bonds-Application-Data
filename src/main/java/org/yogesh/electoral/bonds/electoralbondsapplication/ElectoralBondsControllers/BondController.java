@@ -1,6 +1,5 @@
 package org.yogesh.electoral.bonds.electoralbondsapplication.ElectoralBondsControllers;
 
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.yogesh.electoral.bonds.electoralbondsapplication.Models.PoliticalParty;
 import org.yogesh.electoral.bonds.electoralbondsapplication.Services.PoliticalPartyService;
@@ -9,11 +8,11 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/bond")
-public class PoliticalPartyBondControllers {
+public class BondController {
 
     PoliticalPartyService politicalPartyService;
 
-    public PoliticalPartyBondControllers(PoliticalPartyService politicalPartyService) {
+    public BondController(PoliticalPartyService politicalPartyService) {
         this.politicalPartyService = politicalPartyService;
     }
 
@@ -21,19 +20,17 @@ public class PoliticalPartyBondControllers {
 
     @GetMapping("/Fetch The All Records")
     public List<PoliticalParty> getAll() {
-        List<PoliticalParty> parties = politicalPartyService.getAll();
-        return ResponseEntity.ok(parties).getBody();
+        return politicalPartyService.getAll();
     }
-
-    @GetMapping("/Fetch The Record by/ {BOND_NUMBER}")
+    @GetMapping("/Fetch/ {BOND_NUMBER}")
     public PoliticalParty getById(@PathVariable("BOND_NUMBER") int BOND_NUMBER) {
         return politicalPartyService.getById(BOND_NUMBER);
     }
-    @GetMapping("/Fetch The Record by/{NAME_OF_THE_POLITICAL_PARTY}")
+    @GetMapping("/{NAME_OF_THE_POLITICAL_PARTY}")
     public List<PoliticalParty> getByName(@PathVariable("NAME_OF_THE_POLITICAL_PARTY") String NAME_OF_THE_POLITICAL_PARTY) {
         return politicalPartyService.getByName(NAME_OF_THE_POLITICAL_PARTY);
     }
-    @GetMapping("/Fetch The Record by/{DATE_OF_ENCASHMENT}")
+    @GetMapping("/Fetch/{DATE_OF_ENCASHMENT}")
     public List<PoliticalParty> getByDate(@PathVariable("DATE_OF_ENCASHMENT") String DATE_OF_ENCASHMENT) {
         return politicalPartyService.getByDate(DATE_OF_ENCASHMENT);
     }

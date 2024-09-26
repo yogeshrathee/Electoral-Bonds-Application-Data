@@ -8,13 +8,13 @@ import java.util.List;
 
 @Service
 public interface PoliticalPartyService {
-    public List<PoliticalParty> getAll();
+     List<PoliticalParty> getAll();
 
-    public PoliticalParty getById(int BOND_NUMBER);
+     PoliticalParty getById(int BOND_NUMBER);
 
-    public List<PoliticalParty> getByName(String NAME_OF_THE_POLITICAL_PARTY);
+     List<PoliticalParty> getByName(String NAME_OF_THE_POLITICAL_PARTY);
 
-    public List<PoliticalParty> getByDate(String DATE_OF_ENCASHMENT);
+     List<PoliticalParty> getByDate(String DATE_OF_ENCASHMENT);
 
     //    String getTotalDenominationByPoliticalParty(PoliticalParty politicalParty);
     String getTotalDenominationByPartyName(String partyName);

@@ -16,8 +16,6 @@ public class BondController {
         this.politicalPartyService = politicalPartyService;
     }
 
-
-
     @GetMapping("/Fetch The All Records")
     public List<PoliticalParty> getAll() {
         return politicalPartyService.getAll();
@@ -39,7 +37,6 @@ public class BondController {
     public String getTotalDenominationByPartyName(@PathVariable("NAME_OF_THE_POLITICAL_PARTY") String NAME_OF_THE_POLITICAL_PARTY) {
         return politicalPartyService.getTotalDenominationByPartyName(NAME_OF_THE_POLITICAL_PARTY);
     }
-
     @GetMapping("/total-denomination")
     public String getTotalDenominationForAllParties() {
         return politicalPartyService.getTotalDenominationByAllParties();
@@ -49,6 +46,5 @@ public class BondController {
                                                 @PathVariable("PARTY_NAME") String PARTY_NAME) {
         return politicalPartyService.getDenominationByDateAndParty(DATE_OF_ENCASHMENT, PARTY_NAME);
     }
-
 
 }

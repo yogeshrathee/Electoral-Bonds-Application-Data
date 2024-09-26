@@ -1,5 +1,6 @@
 package org.yogesh.electoral.bonds.electoralbondsapplication.ElectoralBondsControllers;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.yogesh.electoral.bonds.electoralbondsapplication.Models.PoliticalParty;
 import org.yogesh.electoral.bonds.electoralbondsapplication.Services.PoliticalPartyService;
@@ -20,8 +21,10 @@ public class PoliticalPartyBondControllers {
 
     @GetMapping("/Fetch The All Records")
     public List<PoliticalParty> getAll() {
-        return politicalPartyService.getAll();
+        List<PoliticalParty> parties = politicalPartyService.getAll();
+        return ResponseEntity.ok(parties).getBody();
     }
+
     @GetMapping("/Fetch The Record by/ {BOND_NUMBER}")
     public PoliticalParty getById(@PathVariable("BOND_NUMBER") int BOND_NUMBER) {
         return politicalPartyService.getById(BOND_NUMBER);
